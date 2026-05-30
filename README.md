@@ -1,109 +1,76 @@
-# 🐄 LazyCow
+# LazyCow
 
-Local desktop productivity utility for automating developer workflows.
+Local desktop productivity utility for automating developer workflows and managing deep-work focus environments.
+
+---
+
+## Table of Contents
+
+- [First Time Setup](#first-time-setup)
+- [For AI Assistants](#for-ai-assistants)
+- [Project Structure](#project-structure)
+- [Tech Stack](#tech-stack)
+- [Author](#author)
 
 ---
 
 ## First Time Setup
 
 ```bash
-# 1. Navigate to project folder
+# Navigate to project folder
 cd lazycoww
 
-# 2. Install dependencies
+# Install dependencies
 npm install
 
-# 3. Run the app
+# Run the application
 npm run dev
-# For AI Assistants (Claude, ChatGPT, Copilot, etc.)
-To understand this project fully, you MUST read the context file first.
+For AI Assistants
+Requirement: Read docs/CONTEXT.md before assisting with this project.
 
-Step 1: Read the Context
-Open and read /docs/CONTEXT.md completely. This file contains:
+The context file contains:
 
-Complete project architecture
+Section	Description
+Project Architecture	Complete system design and goals
+Technical Stack	Electron, React, TypeScript, Tailwind specifications
+File Registry	Every component with current logic and props
+Coding Standards	TypeScript rules, Tailwind conventions, theme classes
+State Management	localStorage keys, persistence patterns
+Hotkey System	useHotkeyRecorder hook, modifier validation
+Blocked Triggers	OS-critical trigger management
+To run the project:
 
-Technical stack (Electron + React + TypeScript + Tailwind)
-
-File-by-file component registry
-
-Coding standards and theme system
-
-Hotkey recording logic
-
-State management patterns
-
-Step 2: Run the Project
 bash
 cd lazycoww
 npm run dev
-Step 3: Start Helping
-Once you've read CONTEXT.md, you'll have full knowledge of:
+To understand the codebase: Read docs/CONTEXT.md first. Do not suggest changes without reviewing the context file.
 
-All components and their props
-
-Data persistence keys
-
-Theme and styling conventions
-
-Existing hooks and utilities
-
-Project status and next steps
-
-# Important
-Never modify code without reading CONTEXT.md first
-
-The context file is the single source of truth for this project
-
-Always reference it before suggesting changes
-
-📁 Project Location
+Project Structure
 text
-/LazyCow-Desktop/
+LazyCow-Desktop/
 ├── docs/
-│   └── CONTEXT.md          # READ THIS FIRST
-├── lazycoww/               # Main project folder
+│   └── CONTEXT.md          # Read this first
+├── lazycoww/
 │   ├── src/
-│   ├── main.js
+│   │   ├── components/     # React components
+│   │   ├── pages/          # Library, Builder, Settings
+│   │   ├── hooks/          # Custom hooks (useHotkeyRecorder)
+│   │   ├── types/          # TypeScript definitions
+│   │   └── index.css       # Tailwind + HSL themes
+│   ├── main.js             # Electron main process
+│   ├── index.html          # Entry point with splash screen
 │   └── package.json
 └── README.md
-#Author
+Tech Stack
+Technology	Purpose
+Electron	Desktop runtime
+React	UI framework
+TypeScript	Type safety
+Tailwind CSS	Styling
+Vite	Build tool
+localStorage	Data persistence
+Author
 Irf14
 
-Remember: Start here → /docs/CONTEXT.md → Then help
-
-text
-
----
-
-## Also Make Sure Your Folder Structure is Correct
-
-Since your project is inside `lazycoww/` folder, update your context file location:
-
-```bash
-# In your LazyCow-Fresh folder, create this structure:
-LazyCow-Fresh/
-├── README.md
-├── docs/
-│   └── CONTEXT.md          # Your LAZYCOW_CONTEXT.md renamed and moved here
-└── lazycoww/               # Your actual project files
-    ├── src/
-    ├── main.js
-    ├── package.json
-    └── ...
-# Commands to Fix Structure (If Needed)
-bash
-# Create docs folder
-mkdir docs
-
-# Move and rename context file
-move LAZYCOW_CONTEXT.md docs\CONTEXT.md
-
-# If your project isn't in lazycoww folder yet, create it and move files
-mkdir lazycoww
-move * lazycoww\  (except README.md and docs folder)
-# Then Commit and Push
-bash
-git add README.md docs/
-git commit -m "Add README with AI instructions and context file in docs folder"
-git push
+Note
+The context file (docs/CONTEXT.md) is the single source of truth for this project. Always reference it before making changes.
