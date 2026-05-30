@@ -6,11 +6,12 @@ Local desktop productivity utility for automating developer workflows and managi
 
 ## Table of Contents
 
-- [First Time Setup](#first-time-setup)
-- [For AI Assistants](#for-ai-assistants)
-- [Project Structure](#project-structure)
-- [Tech Stack](#tech-stack)
-- [Author](#author)
+- [**First Time Setup**](#first-time-setup)
+- [**Project Features**](#project-features)
+- [**For AI Assistants**](#for-ai-assistants)
+- [**Project Structure**](#project-structure)
+- [**Tech Stack**](#tech-stack)
+- [**Author**](#author)
 
 ---
 
@@ -25,6 +26,18 @@ npm install
 
 # Run the application
 npm run dev
+Note: The project runs inside the lazycoww folder. Do not run commands from the root directory.
+
+Project Features
+Feature	Description
+Workspaces	Library, Builder, Settings, Community, Account tabs
+Hotkey Recording	Capture keyboard shortcuts with modifier validation
+Action Sequences	Build multi-step automation chains with drag-reorder
+Theme System	Coffee, Ocean, Forest themes with light/dark modes
+Blocked Triggers	Prevent system shortcuts from interfering
+Data Persistence	Local storage for shortcuts, settings, and blocked triggers
+Export/Import	Backup and restore your workspace
+OS-Critical Warnings	Prevent deletion of essential system shortcuts
 For AI Assistants
 Requirement: Read docs/CONTEXT.md before assisting with this project.
 
@@ -72,5 +85,5 @@ localStorage	Data persistence
 Author
 Irf14
 
-Note
+Important Note
 The context file (docs/CONTEXT.md) is the single source of truth for this project. Always reference it before making changes.
