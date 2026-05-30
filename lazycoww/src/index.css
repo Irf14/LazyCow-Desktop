@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root, .theme-coffee {
+    /* Coffee Theme - Light */
+    --background: 38 30% 95%;
+    --foreground: 25 20% 20%;
+    --card: 0 0% 100%;
+    --card-light: 40 33% 98%;
+    --card-light-fg: 25 20% 20%;
+    --card-medium: 30 40% 85%;
+    --card-medium-fg: 25 25% 15%;
+    --card-dark: 25 40% 25%;
+    --card-dark-fg: 40 33% 96%;
+    --border: 30 20% 85%;
+    --primary: 25 80% 35%;
+    --primary-foreground: 40 33% 96%;
+    --accent: 30 60% 85%;
+    --accent-foreground: 25 80% 35%;
+    --muted: 40 20% 90%;
+    --muted-foreground: 25 15% 45%;
+}
+
+.dark .theme-coffee, .theme-coffee.dark {
+     --background: 25 20% 12%; 
+     --foreground: 40 33% 90%; 
+     --card: 25 15% 16%;
+     --card-light: 25 15% 18%;
+     --card-light-fg: 40 33% 90%;
+     --card-medium: 25 25% 22%;
+     --card-medium-fg: 40 33% 95%;
+     --card-dark: 25 35% 12%;
+     --card-dark-fg: 40 33% 90%;
+     --border: 25 15% 25%;
+     --primary: 30 70% 50%;
+     --primary-foreground: 25 20% 12%;
+     --accent: 25 30% 25%;
+     --accent-foreground: 30 70% 60%;
+     --muted: 25 15% 20%;
+     --muted-foreground: 40 20% 70%;
+}
+
+.theme-ocean {
+     --background: 210 40% 96%;
+     --foreground: 220 50% 20%;
+     --card: 0 0% 100%;
+     --card-light: 210 40% 98%;
+     --card-light-fg: 220 50% 20%;
+     --card-medium: 190 40% 85%;
+     --card-medium-fg: 220 60% 15%;
+     --card-dark: 220 50% 30%;
+     --card-dark-fg: 210 40% 96%;
+     --border: 210 30% 85%;
+     --primary: 190 80% 40%;
+     --primary-foreground: 0 0% 100%;
+     --accent: 190 50% 85%;
+     --accent-foreground: 190 80% 40%;
+     --muted: 210 30% 90%;
+     --muted-foreground: 220 20% 45%;
+}
+
+.dark .theme-ocean, .theme-ocean.dark {
+     --background: 220 50% 12%; 
+     --foreground: 210 40% 90%; 
+     --card: 220 40% 16%;
+     --card-light: 220 40% 18%;
+     --card-light-fg: 210 40% 90%;
+     --card-medium: 220 35% 22%;
+     --card-medium-fg: 210 40% 95%;
+     --card-dark: 220 50% 10%;
+     --card-dark-fg: 210 40% 90%;
+     --border: 220 30% 25%;
+     --primary: 190 70% 50%;
+     --primary-foreground: 220 50% 12%;
+     --accent: 220 40% 25%;
+     --accent-foreground: 190 70% 60%;
+     --muted: 220 30% 20%;
+     --muted-foreground: 210 30% 70%;
+}
+
+.theme-forest {
+     --background: 120 20% 96%;
+     --foreground: 150 40% 20%;
+     --card: 0 0% 100%;
+     --card-light: 120 20% 98%;
+     --card-light-fg: 150 40% 20%;
+     --card-medium: 140 30% 85%;
+     --card-medium-fg: 150 50% 15%;
+     --card-dark: 150 40% 25%;
+     --card-dark-fg: 120 20% 96%;
+     --border: 130 20% 85%;
+     --primary: 150 60% 35%;
+     --primary-foreground: 0 0% 100%;
+     --accent: 140 40% 85%;
+     --accent-foreground: 150 60% 35%;
+     --muted: 130 20% 90%;
+     --muted-foreground: 150 20% 45%;
+}
+
+.dark .theme-forest, .theme-forest.dark {
+     --background: 150 40% 12%; 
+     --foreground: 120 20% 90%; 
+     --card: 150 30% 16%;
+     --card-light: 150 30% 18%;
+     --card-light-fg: 120 20% 90%;
+     --card-medium: 150 25% 22%;
+     --card-medium-fg: 120 20% 95%;
+     --card-dark: 150 40% 10%;
+     --card-dark-fg: 120 20% 90%;
+     --border: 150 30% 25%;
+     --primary: 140 50% 50%;
+     --primary-foreground: 150 40% 12%;
+     --accent: 150 30% 25%;
+     --accent-foreground: 140 60% 60%;
+     --muted: 150 30% 20%;
+     --muted-foreground: 130 20% 70%;
+}
+
+/* ===================================================
+   FONT LOADING & RENDERING
+   =================================================== */
+
+/* Use font-display: swap via Tailwind config or manual override */
+body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Smooth scrolling for the whole page */
+    scroll-behavior: smooth;
+}
+
+/* Ensure custom fonts swap in smoothly */
+.font-display-lg, .font-headline-md, .font-title-sm,
+h1, h2, h3, h4, h5, h6 {
+    font-display: swap;
+}
+
+/* ===================================================
+   WINDOWS CLEAR-TYPE SCROLL & STUTTER STABILIZER FIX
+   =================================================== */
+
+html, body {
+    -webkit-font-smoothing: subpixel-antialiased !important;
+    -moz-osx-font-smoothing: auto !important;
+    text-rendering: optimizeLegibility !important;
+}
+
+/* GPU-promote scroll containers without breaking text */
+main, 
+.overflow-y-auto {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* Prevent text from becoming blurry during scroll */
+h1, h2, h3, h4, h5, h6, p, span, a, label, button {
+    will-change: auto !important;
+}
+
+/* Cards get GPU layer but text inside stays crisp */
+.card-themeable {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* ===================================================
+   PAGE TRANSITIONS — Prevent UI ghosting
+   =================================================== */
+
+/* Pages stay rendered but hidden — no unmount distortions */
+.page-container {
+    display: none;
+    flex: 1;
+    overflow: hidden;
+}
+
+.page-container.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fade-in for page switches */
+.page-container.active {
+    animation: pageFadeIn 0.15s ease-out;
+}
+
+@keyframes pageFadeIn {
+    from { opacity: 0.85; }
+    to { opacity: 1; }
+}
+
+/* ===================================================
+   CUSTOM THEMED SCROLLBAR (THIN & DYNAMIC)
+   =================================================== */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
